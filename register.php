@@ -16,7 +16,6 @@ if (isset($_POST['submit']))
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
     $email = $_POST['email'];
-    $birthdate = $_POST['birthdate'];
     $valid = TRUE;
     
     if ($_POST['pwd1']!= $_POST['pwd2'])
@@ -47,7 +46,7 @@ if (isset($_POST['submit']))
 
     if ($valid) {
       $sec_password = password_hash($password, PASSWORD_DEFAULT);
-      $sql_register = "INSERT INTO users (username, password, firstName, lastName, email, birthdate) VALUES ('$username', '$sec_password', '$firstName', '$lastName', '$email', '$birthdate')";
+      $sql_register = "INSERT INTO users (username, password, firstName, lastName, email) VALUES ('$username', '$sec_password', '$firstName', '$lastName', '$email')";
 
       if (mysqli_query($conn, $sql_register)) {
           echo "New record created successfully";
