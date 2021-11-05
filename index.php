@@ -18,7 +18,7 @@
     </style>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
-    <title>Welcome Page</title>
+    <title>COMP440 - Welcome Page</title>
 </head>
 <body style="background-color:grey">
 
