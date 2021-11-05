@@ -29,9 +29,9 @@
             </br>
             <input type="text" name="email" placeholder="Email" required style="margin-bottom: 5px" />
             </br>
-            <input type="text" name="pwd1" placeholder="Password" required style="margin-bottom: 5px" />
+            <input type="password" name="pwd1" placeholder="Password" required style="margin-bottom: 5px" />
             </br>
-            <input type="text" name="pwd2" placeholder="Re-enter Password" required style="margin-bottom: 5px" />
+            <input type="password" name="pwd2" placeholder="Re-enter Password" required style="margin-bottom: 5px" />
             </br>
             <input type="text" name="firstname" placeholder="First Name" required style="margin-bottom: 5px" />
             </br>
@@ -47,7 +47,7 @@
             <h2>Login</h2><br>
             <input type="text" name="username" placeholder="Username" required style="margin-bottom: 5px" />
             </br>
-            <input type="text" name="pwd" placeholder="Password" required style="margin-bottom: 5px" />
+            <input type="password" name="pwd" placeholder="Password" required style="margin-bottom: 5px" />
             </br>
             <input type="submit" name="submit" value="Login" style="margin-bottom: 20px" />
             <br>
