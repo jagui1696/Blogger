@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     header('Location: index.php');
 }
 
-if(isset($_POST['initdb'])){
+if(isset($_POST['restart_user_tables'])){
     $droptable = "DROP TABLE users";
     $sql1 = mysqli_query($conn, $droptable);
     $createtable = "CREATE TABLE users (username VARCHAR(12) PRIMARY KEY,
@@ -26,6 +26,38 @@ if(isset($_POST['initdb'])){
     $sql3 = mysqli_query($conn, $default);
     session_destroy();
     header('Location: index.php');
+}
+
+if(isset($_POST['initdb'])){
+    $filename = 'university.sql';
+    $templine = '';
+
+    // Read in entire file
+    $lines = file($filename);
+    // Loop through each line
+    foreach ($lines as $line)
+    {
+        // Skip it if it's a comment
+        if (substr($line, 0, 2) == '--' || $line == '')
+            continue;
+
+        // Add this line to the current segment
+        $templine .= $line;
+        // If it has a semicolon at the end, it's the end of the query
+        if (substr(trim($line), -1, 1) == ';')
+        {
+            // Perform the query
+            $sql2 = mysqli_query($conn, $templine);
+            if(!$sql2) {
+                print('Error performing query \'<strong>' . $templine . '\': ' . mysqli_error($conn) . '<br /><br />');
+            }
+            // Reset temp variable to empty
+            $templine = '';
+        }
+    }
+    echo "Tables imported successfully";
+    //session_destroy();
+    //header('Location: index.php');
 }
 
 ?>
@@ -54,6 +86,11 @@ if(isset($_POST['initdb'])){
                 <tr>Successfully<br>Logged In</tr><br>
                 <tr><?php echo $_SESSION['username']; ?></tr>
             </table>
+        </div>
+        <div id="restart_user_table" class="container">
+            <form method='post' action="">
+                <input type="submit" value="Restart Table Users" name="restart_user_table">
+            </form>
         </div>
         <div id="initdb" class="container">
             <form method='post' action="">
