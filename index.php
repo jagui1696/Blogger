@@ -37,8 +37,6 @@
             </br>
             <input type="text" name="lastname" placeholder="Last Name" required style="margin-bottom: 5px" />
             </br>
-            <input type="date" name="birthdate" placeholder="Birthdate" required style="margin-bottom: 5px" />
-            <br>
             <input type="submit" name="submit" value="Register" style="margin-bottom: 20px" />
             <br>
             Already have account?<br><button type="button" name="button" value ="login" onclick="switchFunction()">Login</button>
