@@ -12,7 +12,21 @@ if(isset($_POST['submit'])){
     header('Location: index.php');
 }
 
-
+if(isset($_POST['initdb'])){
+    $droptable = "DROP TABLE users";
+    $sql1 = mysqli_query($conn, $droptable);
+    $createtable = "CREATE TABLE users (username VARCHAR(12) PRIMARY KEY,
+                                        firstName VARCHAR(24),
+                                        lastName VARCHAR(24),
+                                        password VARCHAR(255),
+                                        email VARCHAR(255) UNIQUE )";
+    $sql2 = mysqli_query($conn, $createtable);
+    $hashpw = password_hash('pass1234', PASSWORD_DEFAULT);
+    $default = "INSERT INTO users (username, password) VALUES ('comp440', '$hashpw')";
+    $sql3 = mysqli_query($conn, $default);
+    session_destroy();
+    header('Location: index.php');
+}
 
 ?>
 <!doctype html>
@@ -36,10 +50,16 @@ if(isset($_POST['submit'])){
     </style></head>
     <body style="background-color:grey">
         <div id ="header" class="container">
-            <h1>Successfully<br>Logged In</h1>
+            <table>
+                <tr>Successfully<br>Logged In</tr><br>
+                <tr><?php echo $_SESSION['username']; ?></tr>
+            </table>
         </div>
         <div id="initdb" class="container">
-            <button type="button" value="initdb">Initialize Database</button></div>
+            <form method='post' action="">
+                <input type="submit" value="Initialize Database" name="initdb">
+            </form>
+        </div>
         </div>
         <div id="logout" class="container">
             <form method='post' action="">

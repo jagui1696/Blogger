@@ -3,11 +3,10 @@
 
     if(isset($_POST['submit'])){
 
-        $username = mysqli_real_escape_string($conn,$_POST['username']);
-        $password = mysqli_real_escape_string($conn,$_POST['pwd']);
+        $username = $_POST['username'];
+        $password = $_POST['pwd'];
     
         if ($username != "" && $password != "") {
-    
             $sql = "SELECT * FROM users WHERE username='".$username."'";
             $result = mysqli_query($conn, $sql);
             $numRows = mysqli_num_rows($result);
@@ -19,14 +18,14 @@
                     header('Location: home.php');
                 }
                 else {
-                    echo "Invalid username or password";
+                    echo "Invalid password";
                     if(isset($_POST['submit2'])) {
                         header('Location: index.php');
                       }
                 }
             }
             else {
-                echo "Invalid username or password";
+                echo "Invalid username";
                 if(isset($_POST['submit2'])) {
                     header('Location: index.php');
                   }

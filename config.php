@@ -13,6 +13,6 @@
       if(! $retval ) {
          die('Could not select database: ' . mysqli_error($conn));
       }
-      //echo "Database TEST selected successfully<br>";
+      //echo "Database compdb selected successfully<br>";
       //mysqli_close($conn);
    ?>

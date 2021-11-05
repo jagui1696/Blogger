@@ -1,3 +1,6 @@
+<?php
+    include_once("config.php");
+?>
 <!DOCTYPE html>
 <head>
     <style>
@@ -27,15 +30,15 @@
             <h2>Register</h2><br>
             <input type="text" name="username" placeholder="Username" required style="margin-bottom: 5px" />
             </br>
-            <input type="text" name="email" placeholder="Email" required style="margin-bottom: 5px" />
+            <input type="text" name="email" placeholder="Email" style="margin-bottom: 5px" />
             </br>
             <input type="password" name="pwd1" placeholder="Password" required style="margin-bottom: 5px" />
             </br>
             <input type="password" name="pwd2" placeholder="Re-enter Password" required style="margin-bottom: 5px" />
             </br>
-            <input type="text" name="firstname" placeholder="First Name" required style="margin-bottom: 5px" />
+            <input type="text" name="firstname" placeholder="First Name" style="margin-bottom: 5px" />
             </br>
-            <input type="text" name="lastname" placeholder="Last Name" required style="margin-bottom: 5px" />
+            <input type="text" name="lastname" placeholder="Last Name" style="margin-bottom: 5px" />
             </br>
             <input type="submit" name="submit" value="Register" style="margin-bottom: 20px" />
             <br>
@@ -68,7 +71,3 @@
     </script>
 
 </body>
-
-<?php
-    include_once("config.php");
-?>
