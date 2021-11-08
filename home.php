@@ -29,6 +29,9 @@ if(isset($_POST['restart_user_tables'])){
 }
 
 if(isset($_POST['initdb'])){
+    /*  THIS SOURCE FROM: https://stackoverflow.com/questions/19751354/how-do-i-import-a-sql-file-in-mysql-database-using-php
+    WITH HEAVY ADJUSTMENTS TO THE CODE AS IT WAS NOT WORKING APROPRIATELY
+    USED FOR SQL INJECTION PURPOSES */
     $filename = 'university.sql';
     $templine = '';
 
@@ -56,6 +59,7 @@ if(isset($_POST['initdb'])){
         }
     }
     echo "Tables imported successfully";
+    // END OF THIRD PARTY CODE
     //session_destroy();
     //header('Location: index.php');
 }
@@ -89,7 +93,7 @@ if(isset($_POST['initdb'])){
         </div>
         <div id="restart_user_table" class="container">
             <form method='post' action="">
-                <input type="submit" value="Restart Table Users" name="restart_user_table">
+                <input type="submit" value="Restart Table Users" name="restart_user_tables">
             </form>
         </div>
         <div id="initdb" class="container">

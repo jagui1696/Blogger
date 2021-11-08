@@ -9,7 +9,7 @@
          die('Could not connect: ' . mysqli_error($conn));
       }
       //echo 'Connected successfully<br />';
-      $retval = mysqli_select_db( $conn, 'compdb' );
+      $retval = mysqli_select_db( $conn, 'comp440' );
       if(! $retval ) {
          die('Could not select database: ' . mysqli_error($conn));
       }

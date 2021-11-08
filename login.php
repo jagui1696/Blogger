@@ -7,8 +7,10 @@
         $password = $_POST['pwd'];
     
         if ($username != "" && $password != "") {
-            $sql = "SELECT * FROM users WHERE username='".$username."'";
-            $result = mysqli_query($conn, $sql);
+            $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+            $stmt->bind_param('s', $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
             $numRows = mysqli_num_rows($result);
     
             if ($numRows == 1) {

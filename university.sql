@@ -17,7 +17,7 @@
 
 -- Before execute the file, ADD your database name here:
 -- The database name should be the same as your database of your user table from step 1
-use `compdb`; 
+use `comp440`; 
 
 --
 -- Table structure for table `advisor`

@@ -18,3 +18,6 @@ Also, we changed user 'mahdi' to 'root' in line 369.
 3. Code for .sql injection was inspired from 
 https://stackoverflow.com/questions/19751354/how-do-i-import-a-sql-file-in-mysql-database-using-php
 with heavy adjustments to make it work.
+
+Team Contributions: We met in person and worked on the code, step-by-step, together.
+So our contribution was equal as created the code as we progressed.
