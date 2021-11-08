@@ -27,3 +27,5 @@ We're unsure how to get around this and our google-fu hasn't found any helpful m
 
 Team Contributions: We met in person and worked on the code, step-by-step, together.
 So our contribution was equal as created the code as we progressed.
+
+Our presentation video is avaiable here: https://screenrec.com/share/Fv4WoMpcP2
