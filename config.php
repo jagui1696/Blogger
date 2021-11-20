@@ -2,7 +2,7 @@
       session_start();
       $dbhost = 'localhost';
       $dbuser = 'root';
-      $dbpass = 'pass1234';
+      $dbpass = '';
       $conn = mysqli_connect($dbhost, $dbuser, $dbpass);
 
       if(! $conn ) {
